@@ -1,0 +1,27 @@
+server:
+  port: 9100 # 服务提供方
+
+# 指定当前eureka客户端的注册地址,
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8501/eureka
+  instance:
+    hostname: 127.0.0.1
+
+#路由规则定义。这里定义两种路由规则route1和route2
+#，代表访问网关/test01/**或/test02/**时。
+#路由到服务名为 eurekaservice1或 eureka
+#service2中的服务集群去。
+zuul:
+  routes:
+    route1:
+      path: /provider01/**
+      serviceId: eureka-provider1
+    route2:
+      path: /support02/**
+      serviceId: eureka-support-service
+
+spring:
+  application:
+    name: zuul
