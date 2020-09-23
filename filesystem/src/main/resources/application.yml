@@ -1,0 +1,31 @@
+
+# 指定当前eureka客户端的注册地址,
+eureka:
+  client:
+    enabled: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8501/eureka
+  instance:
+    hostname: 127.0.0.1
+
+
+spring:
+  application:
+    name: filesystem
+  datasource:
+    url: jdbc:mysql://139.129.116.138:3306/filesystem?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .ftl
+    static-path-pattern: /static/**
+
+server:
+  port: 8800 # 服务提供方
+  servlet:
+    context-path: /bigfile
