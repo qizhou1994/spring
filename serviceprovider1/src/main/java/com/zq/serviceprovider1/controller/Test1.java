@@ -13,6 +13,6 @@ public class Test1 {
 
     @RequestMapping("service1")
     public String test1(){
-        return "服务provider";
+        return "服务provider1";
     }
 }

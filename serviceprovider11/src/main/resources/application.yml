@@ -1,11 +1,11 @@
 server:
-  port: 8604 # 服务提供方
+  port: 8603 #
 
 # 指定当前eureka客户端的注册地址,
 eureka:
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8501/eureka
+      defaultZone: http://${eureka.instance.hostname}:8502/eureka/,http://${eureka.instance.hostname}:8511/eureka/
   instance:
     hostname: 127.0.0.1
 

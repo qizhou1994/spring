@@ -1,0 +1,3 @@
+com\zq\eureka_consumer\controller\ConsumerController.class
+com\zq\eureka_consumer\bean\Beans.class
+com\zq\eureka_consumer\EurekaConsumeApplication.class

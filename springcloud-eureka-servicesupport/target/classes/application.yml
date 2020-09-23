@@ -1,15 +1,17 @@
 server:
-  port: 8601 # 服务提供方
+  port: 8502 # 服务提供方
 
 # 指定当前eureka客户端的注册地址,
 eureka:
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8501/eureka
+      defaultZone: http://${eureka.instance.hostname}:8511/eureka/
+    register-with-eureka: true #自身 不在向eureka注册
+    fetch-registry: true  #启动时禁用client的注册
   instance:
     hostname: 127.0.0.1
 
 #当前服务名称
 spring:
   application:
-    name: eureka-support-service
+    name: eureka-server
